@@ -1,6 +1,6 @@
 %global major_version 2
 %global minor_version 1
-%global teeny_version 0
+%global teeny_version 1
 %global patch_level   0
 
 %global major_minor_version %{major_version}.%{minor_version}
@@ -32,8 +32,9 @@ Release:        1%{?dist}
 Group:          Development/Languages
 License:        (Ruby or BSD) and Public Domain
 URL:            http://www.ruby-lang.org/
-Source0:        ftp://ftp.ruby-lang.org/pub/%{name}/%{major_minor_version}/%{name}-%{ruby_version}.tar.gz
-#Source0:       ftp://ftp.ruby-lang.org/pub/ruby/2.1/ruby-2.1.0.tar.gz
+Source0:        http://cache.ruby-lang.org/pub/%{name}/%{major_minor_version}/%{name}-%{ruby_version}.tar.gz
+#Source0:       http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.0.tar.gz
+#Source0:       http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.1.tar.gz
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires:  byacc
@@ -116,6 +117,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}
 
 %changelog
+* Thu Feb 27 2014 Takayuki Usui <usui.takayuki@po.ntts.co.jp> - 2.1.1
+- Updating with minor release of Ruby
+
 * Thu Feb 2 2014 Takayuki Usui <usui.takayuki@po.ntts.co.jp> - 2.1.0
-- Initial spec to replace system ruby with 2.1.0-p0
+- Initial spec to replace system Ruby with 2.1.0-p0
 
