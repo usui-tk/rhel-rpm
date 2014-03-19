@@ -5,7 +5,7 @@ yum --setopt=group_package_types=optional groupinstall -y "Development Tools"
 yum install -y rpm-build rpmdevtools readline-devel ncurses-devel gdbm-devel tcl-devel openssl-devel db4-devel byacc libyaml-devel libffi-devel make rpmdevtools openssl-devel readline-devel zlib-devel curl-devel libyaml-devel
 
 
-Ruby v2.9.0 @usui-tk_github
+Ruby v2.0.0 @usui-tk_github
 ==========================================================
 useradd rpmdevel
 su - rpmdevel
