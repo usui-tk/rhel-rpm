@@ -1,0 +1,22 @@
+yum groupinstall -y 'Development tools'
+yum groupinstall -y "Development tools"
+yum --setopt=group_package_types=optional groupinstall -y "Development Tools"
+
+yum install -y rpm-build rpmdevtools readline-devel ncurses-devel gdbm-devel tcl-devel openssl-devel db4-devel byacc libyaml-devel libffi-devel make rpmdevtools openssl-devel readline-devel zlib-devel curl-devel libyaml-devel
+
+
+Ruby v2.1.0
+==========================================================
+useradd rpmdevel
+su - rpmdevel
+rpmdev-setuptree
+
+cd ~/rpmbuild/SOURCES
+wget http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.1.tar.gz
+
+cd ~/rpmbuild/SPECS
+wget https://raw.github.com/usui-tk/rhel-rpm/master/ruby-v2.1-spec/ruby-2.1.x.spec
+
+time rpmbuild -ba ruby-2.1.x.spec
+==========================================================
+
