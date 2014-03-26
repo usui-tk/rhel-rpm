@@ -1,0 +1,23 @@
+yum groupinstall -y 'Development tools'
+yum groupinstall -y "Development tools"
+yum --setopt=group_package_types=optional groupinstall -y "Development Tools"
+
+yum install -y rpm-build rpmdevtools readline-devel ncurses-devel gdbm-devel tcl-devel openssl-devel db4-devel byacc libyaml-devel libffi-devel make rpmdevtools openssl-devel readline-devel zlib-devel curl-devel libyaml-devel
+
+
+Ruby v1.9.3 @usui-tk_github
+==========================================================
+useradd rpmdevel
+su - rpmdevel
+rpmdev-setuptree
+
+cd ~/rpmbuild/SOURCES
+wget http://cache.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p545.tar.gz
+
+cd ~/rpmbuild/SPECS
+wget https://raw.github.com/usui-tk/rhel-rpm/master/ruby-v1.9.3-spec/ruby-1.9.3.spec
+
+time rpmbuild -ba ruby-1.9.3.spec
+==========================================================
+
+
